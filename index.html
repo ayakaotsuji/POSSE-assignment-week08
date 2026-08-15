@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エージェント一覧</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 w-full">
+    <h1 class="text-3xl font-bold mt-8 mb-4 pl-11">極秘部隊: エージェント一覧</h1>
+    <h2 class="text-normal font-normal mb-6 pl-11">日本列島を守るべく、自衛隊の非公式秘密謀報組織「極秘部隊」として活動する。</h2>
+    <div id="agentList" class="grid gap-3"></div>
+
+    <script>
+        const agents = [
+            { name: "神崎蓮", role: "潜入捜査官", comment: "大手商社の社員という表の顔を持つ。テロなどの犯罪組織の内部に入り込み、証拠や機密情報を集める。卓越した戦闘力と鋭い洞察力で、任務を遂行する。"},
+            { name: "水城葵", role: "情報分析官", comment: "大学教授という表の顔を持つ。膨大なデータから敵の行動パターンを瞬時に分析する。冷静沈着な分析力で、部隊の作戦立案を支える。"},
+            { name: "白石凛", role: "通信技術館", comment: "IT企業のエンジニアという表の顔を持つ。高度なコンピューター技術を駆使し、敵の通信網や情報システムを監視する。天才的なハッキング技術の持ち主。"},
+            { name: "鷹宮誠", role: "戦術指揮官", comment: "民間警備員会社の社員という表の顔を持つ。豊富な現場経験を持つ極秘部隊の指揮者。卓越した戦術的判断力とリーダーシップで、部隊を導く。"},
+            { name: "神谷美月", role: "交渉担当官", comment: "臨床心理士としての表の顔を持つ。敵との交渉や人質救出を担当する。卓越した話術と心理分析能力で、先頭を避けながら敵から情報を引き出すことを得意とする。"}
+        ];
+
+        const agentList = document.getElementById("agentList");
+
+        agents.forEach((agent) => {
+            const card = document.createElement("div");
+            card.className = "bg-white rounded-lg p-6 shadow-md ml-10 mr-28";
+            card.innerHTML = `
+                <h3 class="text-xl font-bold mb-4">${agent.name}</h3>
+                <p class="text-red-700 text-lg">${agent.role}</p>
+                <p class="text-gray-700 text-normal mb-3">${agent.comment}</p>
+            `;
+            agentList.appendChild(card);
+        });
+    </script>
+</body>
+</html>
